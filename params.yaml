@@ -1,7 +1,7 @@
 base:
   project: defect_detection
   pkg_list_fname: pkg_list.txt
-  random_state: 0
+  random_state: 32
 
 data_load:
   dataset_url: https://github.com/abin24/Magnetic-tile-defect-datasets./archive/refs/heads/master.zip
@@ -11,18 +11,18 @@ data_load:
   code_names: [0, 1]
 
 data_split:
-  test_pct: 0.20
+  test_pct: 0.4
   train_img_dir_path: data/MAGNETIC_TILE_SURFACE_DEFECTS/train_images
   train_mask_dir_path: data/MAGNETIC_TILE_SURFACE_DEFECTS/train_masks
   test_img_dir_path: data/MAGNETIC_TILE_SURFACE_DEFECTS/test_images
   test_mask_dir_path: data/MAGNETIC_TILE_SURFACE_DEFECTS/test_masks
 
 train:
-  img_size: 200
+  img_size: 256
   valid_pct: 0.2
   learning_rate: 0.005
   batch_size: 8
-  n_epochs: 10
+  n_epochs: 15
   use_cpu: false
   model_pickle_dir_path: models
   model_pickle_fname: model_pickle_fastai.pkl
